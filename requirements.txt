@@ -4,3 +4,4 @@ pandas
 matplotlib
 geopandas
 streamlit_option_menu
+openpyxl
