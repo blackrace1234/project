@@ -60,19 +60,19 @@ if selected=="Inicio":
 
     st.title('Recuento de Géneros por Región')
 
-    # Desapilar el DataFrame
+    
     conteo_sexos = df.groupby(['REGION', 'SEXO']).size().unstack(fill_value=0)
 
     fig, ax = plt.subplots(figsize=(9, 14))
 
-    # Crear un gráfico de barras con colores específicos y agregar una leyenda
+    
     conteo_sexos.plot(kind='barh', color={'FEMENINO': 'blue', 'MASCULINO': 'red'}, ax=ax)
 
     plt.title('')
     plt.ylabel('Región')
     plt.xlabel('Cantidad')
 
-    # Agregar una leyenda
+    
     plt.legend(['Femenino', 'Masculino'])
 
     st.pyplot(fig)
@@ -91,16 +91,16 @@ if selected=="Grafico Mapa":
     st.sidebar.markdown(pages, unsafe_allow_html=True)
 
     st.title('MAPA')
-    # Crear una lista de las regiones únicas en el DataFrame
+    
     regiones = df['REGION'].unique().tolist()
 
-    # Crear un selectbox para seleccionar una región
+    
     region_seleccionada = st.selectbox('Selecciona una región', regiones)
 
-    # Filtrar el DataFrame para obtener solo los datos de la región seleccionada
+    
     df_filtrado = df[df['REGION'] == region_seleccionada]
 
-    # Crear un mapa con los datos de la región seleccionada
+    
     st.map(df_filtrado)
 
 if selected=="Pastel":
@@ -120,9 +120,9 @@ if selected=="Pastel":
     st.title('PASTEL')
     conteo_ambito = df['AMBITO_INEI'].value_counts()
 
-    # Crear un gráfico de pastel
-    plt.figure(figsize=(10,6))  # Ajustar el tamaño del gráfico
+    
+    plt.figure(figsize=(10,6))  
     conteo_ambito.plot.pie(autopct='%1.1f%%')
 
-    # Mostrar el gráfico en Streamlit
+    
     st.pyplot(plt)
