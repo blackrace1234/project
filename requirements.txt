@@ -1,0 +1,6 @@
+streamlit
+numpy
+pandas
+matplotlib
+geopandas
+streamlit_option_menu
