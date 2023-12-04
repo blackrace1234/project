@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 from streamlit_option_menu import option_menu
 import altair as alt
 
-df = pd.read_excel(r'C:\Users\camil\Desktop\Base_de_datos\OPENDATA_DS_01_AFILIADOS.xlsx',header=0)
-db=pd.read_csv(r'C:\Users\camil\Desktop\Base_de_datos\muestra2023.csv', encoding='latin1')
-df1 = pd.read_csv(r'C:\Users\camil\Desktop\Base_de_datos\muestra2022.csv', encoding='latin1')
+df = pd.read_excel(r'OPENDATA_DS_01_AFILIADOS.xlsx',header=0)
+db=pd.read_csv(r'muestra2023.csv', encoding='latin1')
+df1 = pd.read_csv(r'muestra2022.csv', encoding='latin1')
 page_img="""
 <style>
 [data-testid="stAppViewContainer"]{
